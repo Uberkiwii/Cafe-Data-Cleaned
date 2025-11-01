@@ -1,4 +1,5 @@
-# Café Sales Data Cleaning Project
+# Café Sales Data Cleaning Project ![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
+
 Dataset provided by Kaggle: https://www.kaggle.com/datasets/ahmedmohamed2003/cafe-sales-dirty-data-for-cleaning-training/data
 
 ---
