@@ -1,5 +1,5 @@
 # Café Sales Data Cleaning Project
-Data retrieved from: https://www.kaggle.com/datasets/ahmedmohamed2003/cafe-sales-dirty-data-for-cleaning-training/data
+Dataset provided by Kaggle: https://www.kaggle.com/datasets/ahmedmohamed2003/cafe-sales-dirty-data-for-cleaning-training/data
 
 ---
 
