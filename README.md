@@ -79,9 +79,6 @@ Exported the cleaned dataset to: **cleaned_cafe_sales.csv**
 ---
 
 ## Future Work
-
-- Extend the project to include exploratory data analysis (EDA).
-- Visualize category-level trends using Matplotlib or Seaborn.
 - Create a Power BI or Tableau dashboard for interactive reporting.
 ---
 
