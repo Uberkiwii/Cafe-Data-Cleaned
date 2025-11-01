@@ -92,10 +92,10 @@ Exported the cleaned dataset to: **cleaned_cafe_sales.csv**
    cd cafe-cleaning
 2. Install required packages:
     ```bash
-    pip install pandas numpy matplotlib jupyter
+    pip install pandas numpy matplotlib seaborn os jupyter
 3. Launch the notebook:
    ```bash
-   jupyter notebook Cafe_Cleaning.ipynb
+   jupyter notebook Cafe_Cleaning.ipynb, Cafe_EDA.ipynb
 4. Run all cells to reproduce the cleaning workflow.
 
 ---
