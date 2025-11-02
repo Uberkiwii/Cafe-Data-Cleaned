@@ -78,8 +78,12 @@ The goal was to produce a validated, analysis-ready dataset and develop a Power 
 The interactive dashboard consolidates cleaning and EDA insights into three main views:  
 
 1. **Executive Overview** – Top KPIs and revenue trends  
-2. **Filter Panel** – Dynamic slicers for date, item, location, payment method  
-3. **Detailed Transaction View** – Row-level sales records for drill-down analysis  
+2. **Filter Panel** – Dynamic slicers for date, item, location, payment method
+3. **Navigation Button** - Working button for navigation between overviews
+4. **Detailed Transaction View** – Row-level sales records for drill-down analysis
+   
+![Dashboard Overview](images/pbiss1.png)  
+![Executive Overview](images/pbiss2.png)  
 
 ---
 
