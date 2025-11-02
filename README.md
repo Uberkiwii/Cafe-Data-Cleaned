@@ -28,7 +28,7 @@ The goal was to produce a validated, analysis-ready dataset and develop a Power 
 - Replaced nulls in categorical fields with **“Unknown”** / **“Error.”**  
 - Re-computed missing numeric values using arithmetic logic  
   (*Total Spent = Quantity × Price Per Unit*).  
-- Removed invalid dates (<5%) and validated > 99 % arithmetic consistency.  
+- Removed invalid dates (<5%) and validated >99% arithmetic consistency.  
 - Exported final dataset as `cleaned_cafe_sales.csv` for analysis.
 
 ---
