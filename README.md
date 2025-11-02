@@ -1,98 +1,112 @@
-# Café Sales Data Cleaning Project ![Status](https://img.shields.io/badge/Status-Completed-green)
+# Café Sales Data Cleaning, EDA & Power BI Dashboard  
+![Status](https://img.shields.io/badge/Status-Completed-green)
 
-Dataset provided by Kaggle: https://www.kaggle.com/datasets/ahmedmohamed2003/cafe-sales-dirty-data-for-cleaning-training/data
+Author
+Henry Wang
+Data Analyst | IT Graduate | Power BI Developer  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/henry-wangg)
+
+Dataset: [Café Sales Dirty Data for Cleaning Training (Kaggle)](https://www.kaggle.com/datasets/ahmedmohamed2003/cafe-sales-dirty-data-for-cleaning-training/data)
 
 ---
 
 ## Overview
-This project focuses on cleaning a 10,000-row café transaction dataset using **Python** and **Pandas**.  
-The dataset contained missing, inconsistent, and duplicate values that required structured preprocessing before analysis.  
-The objective was to produce a validated, analysis-ready dataset for future exploratory analysis or modeling.
+End-to-end analysis of a 2023 café transaction dataset (≈10 000 rows) from raw data cleaning to exploratory analysis and dashboard visualization.  
+The goal was to produce a validated, analysis-ready dataset and develop a Power BI dashboard highlighting key sales, product, and customer insights.
 
 ---
 
 ## Objectives
-- Identify and handle missing, inconsistent, and duplicate records.  
-- Convert object-type numeric and date columns into correct data types.  
-- Impute missing categorical and numerical values using context-based logic.  
-- Verify arithmetic consistency across related columns.  
-- Export a finalized clean dataset for downstream analytics.
+- Clean and standardize raw café transaction data for accuracy.  
+- Analyze revenue, order value, and customer behavior patterns.  
+- Visualize results in an interactive Power BI dashboard.  
 
 ---
 
-## Cleaning Process
-
-### 1. Initial Review
-Inspected data structure using `info()` and `head()` to determine column datatypes and missingness.  
-Identified that all columns were stored as object types, requiring conversion.
-
-### 2. Duplicate Detection
-Checked for duplicates using the unique `Transaction ID` column as a reference.
-
-### 3. Missing Value Assessment
-Detected approximately **8.5%** missing data across the dataset.  
-Reviewed missingness by column to determine appropriate handling methods.
-
-### 4. Categorical Imputation
-Replaced nulls in **Payment Method**, **Location**, and **Item** columns with `'Unknown'`.  
-Normalized capitalization using `str.title()` and removed trailing whitespace.
-
-### 5. Numeric Conversion and Imputation
-Converted **Quantity**, **Price Per Unit**, and **Total Spent** into numeric datatypes using `pd.to_numeric()`.  
-Derived missing values using arithmetic relationships:  
-- `Total Spent = Quantity × Price Per Unit`  
-- `Price Per Unit = Total Spent ÷ Quantity`  
-Remaining nulls were imputed using column means.  
-
-Converted **Transaction Date** to datetime format and dropped rows where the date was missing.  
-This removal accounted for less than 5% of data and prevented distortion in any time-based analyses.
-
-### 6. Validation
-Validated that `Total Spent` closely matched `Quantity × Price Per Unit` across all rows.  
-Achieved over **99%** consistency post-cleaning.  
-
-Confirmed that all missing values were successfully handled.
-
-### 7. Export
-Exported the cleaned dataset to: **cleaned_cafe_sales.csv**
-
+## Data Preparation (Summary)
+- Inspected and converted data types for numeric and date fields.  
+- Replaced nulls in categorical fields with **“Unknown”** / **“Error.”**  
+- Re-computed missing numeric values using arithmetic logic  
+  (*Total Spent = Quantity × Price Per Unit*).  
+- Removed invalid dates (< 5 %) and validated > 99 % arithmetic consistency.  
+- Exported final dataset as `cleaned_cafe_sales.csv` for analysis.
 
 ---
 
 ## Tools & Technologies
-| Category | Tools Used |
-|-----------|-------------|
+| Category | Tools |
+|-----------|-------|
 | Language | Python |
-| Libraries | Pandas, NumPy, Matplotlib |
+| Libraries | Pandas, NumPy, Matplotlib, Seaborn |
+| Visualization | Power BI Desktop |
 | Environment | Jupyter Notebook |
-| Data Source | CSV file (`dirty_cafe_sales.csv`) |
 
 ---
 
-## Results Summary
-| Metric | Before Cleaning | After Cleaning |
-|---------|----------------|----------------|
-| Missing Values | ~8.5% | 0% |
-| Invalid Data Types | 5 columns | 0 columns |
-| Arithmetic Consistency | ~88% | >99% |
+## Exploratory Data Analysis
+**Dataset:** 9 540 transactions  
+**Period:** January – December 2023  
+
+**Highlights**
+- Spending distribution is right-skewed; most transactions under $15.  
+- **Sandwiches, Smoothies, Coffee** generate the highest total revenue.  
+- **Digital Wallet** / **Credit Card** users spend more per order than cash users.  
+- **Takeaway** orders have higher average ticket values than in-store purchases.  
+- Revenue remains stable year-round with peaks in **May–June** and **October–December**.  
+
+**Core EDA Outputs**
+- Item and payment-method frequency distributions  
+- Top 10 items by revenue  
+- Average spending by payment method and location  
+- Monthly and weekday revenue trends  
+- Heatmap – average spend by month × day of week  
 
 ---
 
-## Future Work
-- Create a Power BI or Tableau dashboard for interactive reporting.
+## KPI Summary (2023)
+| Metric | Value |
+|--------|--------|
+| Total Revenue | ≈ $85 000 |  
+| Average Order Value | $8.9 |  
+| Average Items per Order | 3.0 |  
+| Top Item by Revenue | Sandwich |  
+| Common Payment Method | Digital Wallet |  
+
+---
+
+## Power BI Dashboard
+The interactive dashboard consolidates cleaning and EDA insights into three main views:  
+
+1. **Executive Overview** – Top KPIs and revenue trends  
+2. **Filter Panel** – Dynamic slicers for date, item, location, payment method  
+3. **Detailed Transaction View** – Row-level sales records for drill-down analysis  
+
+---
+
+## Key Insights
+- Café revenue driven primarily by **Sandwiches, Smoothies, Coffee**.  
+- **Takeaway** transactions yield higher average spend per order.  
+- **Digital payment** users display higher spending and loyalty potential.  
+- Consistent weekday revenue supports reliable staffing and inventory planning.  
+
+---
+
+## Strategic Recommendations
+- Introduce combo promotions (e.g., Sandwich + Coffee) to raise ticket size.  
+- Offer digital-payment incentives to reduce checkout time and encourage loyalty.  
+- Optimize weekend staffing and supply based on higher takeaway demand.  
+- Reassess low-volume menu items for potential rotation or promotion.  
+
 ---
 
 ## How to Run
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/cafe-cleaning.git
-   cd cafe-cleaning
-2. Install required packages:
-    ```bash
-    pip install pandas numpy matplotlib seaborn os jupyter
-3. Launch the notebook:
-   ```bash
-   jupyter notebook Cafe_Cleaning.ipynb, Cafe_EDA.ipynb
-4. Run all cells to reproduce the cleaning workflow.
+```bash
+git clone https://github.com/yourusername/cafe-sales-analysis.git
+cd cafe-sales-analysis
+pip install pandas numpy matplotlib seaborn jupyter
+jupyter notebook Cafe_EDA.ipynb
 
+Then open the Power BI file (cafe_sales_dashboard.pbit) and connect it to cleaned_cafe_sales.csv.
+```
 ---
+
