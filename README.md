@@ -11,7 +11,7 @@ Dataset: [Café Sales Dirty Data for Cleaning Training (Kaggle)](https://www.kag
 ---
 
 ## Overview
-End-to-end analysis of a 2023 café transaction dataset (≈10 000 rows) from raw data cleaning to exploratory analysis and dashboard visualization.  
+End-to-end analysis of a 2023 café transaction dataset (≈10,000 rows) from raw data cleaning to exploratory analysis and dashboard visualization.  
 The goal was to produce a validated, analysis-ready dataset and develop a Power BI dashboard highlighting key sales, product, and customer insights.
 
 ---
@@ -28,7 +28,7 @@ The goal was to produce a validated, analysis-ready dataset and develop a Power 
 - Replaced nulls in categorical fields with **“Unknown”** / **“Error.”**  
 - Re-computed missing numeric values using arithmetic logic  
   (*Total Spent = Quantity × Price Per Unit*).  
-- Removed invalid dates (< 5 %) and validated > 99 % arithmetic consistency.  
+- Removed invalid dates (<5%) and validated > 99 % arithmetic consistency.  
 - Exported final dataset as `cleaned_cafe_sales.csv` for analysis.
 
 ---
@@ -44,7 +44,7 @@ The goal was to produce a validated, analysis-ready dataset and develop a Power 
 ---
 
 ## Exploratory Data Analysis
-**Dataset:** 9 540 transactions  
+**Dataset:** 9,540 transactions  
 **Period:** January – December 2023  
 
 **Highlights**
@@ -66,7 +66,7 @@ The goal was to produce a validated, analysis-ready dataset and develop a Power 
 ## KPI Summary (2023)
 | Metric | Value |
 |--------|--------|
-| Total Revenue | ≈ $85 000 |  
+| Total Revenue | ≈ $85,000 |  
 | Average Order Value | $8.9 |  
 | Average Items per Order | 3.0 |  
 | Top Item by Revenue | Sandwich |  
